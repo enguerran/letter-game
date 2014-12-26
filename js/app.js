@@ -1,6 +1,7 @@
 var React = require('react');
+var SampleApp = require('./components/SampleApp.react');
 
 React.render(
-    <h3>It works!</h3>,
-    document.getElementById('content')
+    <SampleApp />,
+    document.getElementById('app')
 );
