@@ -46,9 +46,11 @@ html, body {
 }
 
 .tile {
-  position: relastive;
   height: 100%;
   width: 100%;
+  text-align: center;
+  line-height: 40px;
+  background-color: #ddee33;
 }
 
 .emptyTile {

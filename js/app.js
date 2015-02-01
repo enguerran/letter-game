@@ -1,7 +1,7 @@
 var React = require('react');
-var SampleApp = require('./components/SampleApp.react');
+var Rack = require('./components/Rack.react');
 
 React.render(
-    <SampleApp />,
-    document.getElementById('app')
+    <Rack />,
+    document.getElementById('rack')
 );
