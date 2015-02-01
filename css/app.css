@@ -1,3 +1,63 @@
-h1 {
-  color: steelblue;
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.fullPageContainer {
+  background-color: #446644;
+  height: 100%;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  background-color: #eee;
+  color: #555;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+  width: 600px;
+  border: 3px solid #555;
+}
+
+.gridRow {
+  position: relative;
+  flex: 0 0 40px;
+  display: flex;
+  height: 40px;
+  width: 600px;
+}
+
+.tileContainer {
+  position: relative;
+  flex: 0 0 40px;
+  border: 1px solid #aaa;
+  height: 40px;
+  width: 40px;
+}
+
+.tile {
+  position: relastive;
+  height: 100%;
+  width: 100%;
+}
+
+.emptyTile {
+  background-color: #ddd;
+}
+
+.rack {
+  box-sizing: content-box;
+  border: 3px solid #555;
+  display: flex;
+  margin-top: 50px;
 }

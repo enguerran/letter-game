@@ -3,12 +3,747 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>React boilerplate</title>
+    <title>Scrabble</title>
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
-    <h1>React Boilerplate</h1>
-    <main id="app"></main>
-    <script src="js/bundle.js"></script>
+    <div class="fullPageContainer">
+      <!-- <h1>Scrabble</h1> -->
+      <div class="board">
+        <!-- div.grid>div.gridRow*15>div.tileContainer*15>div.tile.emptyTile -->
+        <div class="grid">
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+          <div class="gridRow">
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+            <div class="tileContainer">
+              <div class="tile emptyTile"></div>
+            </div>
+          </div>
+        </div>
+        <div class="rack">
+          <div class="tileContainer">
+            <div class="tile emptyTile"></div>
+          </div>
+          <div class="tileContainer">
+            <div class="tile emptyTile"></div>
+          </div>
+          <div class="tileContainer">
+            <div class="tile emptyTile"></div>
+          </div>
+          <div class="tileContainer">
+            <div class="tile emptyTile"></div>
+          </div>
+          <div class="tileContainer">
+            <div class="tile emptyTile"></div>
+          </div>
+          <div class="tileContainer">
+            <div class="tile emptyTile"></div>
+          </div>
+          <div class="tileContainer">
+            <div class="tile emptyTile"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- <script src="js/bundle.js"></script> -->
   </body>
 </html>
