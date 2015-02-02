@@ -1,7 +1,7 @@
 var React = require('react');
-var Rack = require('./components/Rack.react');
+var Board = require('./components/Board.react');
 
 React.render(
-    <Rack />,
-    document.getElementById('rack')
+    <Board />,
+    document.getElementById('board')
 );
