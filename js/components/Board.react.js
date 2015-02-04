@@ -1,5 +1,6 @@
 var React = require('react');
 var Tile = require('./Tile.react');
+var CenterStar = require('./CenterStar.react');
 
 var Board = React.createClass({
   render: function() {
@@ -18,10 +19,11 @@ var Board = React.createClass({
           <g>
             <path fill="#19BE72" d={d} />
             {tiles}
+            <CenterStar boardSize={this.props.size} />
           </g>
         </g>
       </svg>
-      );
+    );
   }
 });
 
