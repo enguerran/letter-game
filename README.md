@@ -8,3 +8,6 @@ cd letter-game
 npm install
 npm run start
 ```
+
+[Demo](http://enguerran.github.io/letter-game/)
+
