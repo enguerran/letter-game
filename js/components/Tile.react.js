@@ -56,7 +56,7 @@ var Tile = React.createClass({
     var d = getSVGCoordinates(x, y, this.props.boardSize, strokeWidth);
     var color = getColor(x,y);
 
-    return <path fill={color} stroke="#000000" strokeWidth={strokeWidth} d={d} />;
+    return <path data-type="tile" data-coordx={x} data-coordy={y} fill={color} stroke="#000000" strokeWidth={strokeWidth} d={d} />;
   }
 });
 
