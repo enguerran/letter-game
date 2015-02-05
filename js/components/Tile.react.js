@@ -2,7 +2,7 @@ var React = require('react');
 
 function getColor(x, y) {
   if(x % 4 === 1 && y % 4 === 1) {
-    if(x !== 1 || y !== 1) {
+    if((x-1)%12 !== 0 || (y-1)%12 !== 0) {
       return "#0000FF";
     }
   }
@@ -38,14 +38,14 @@ function getColor(x, y) {
       return "#00C0FF";
     }
   }
-  return "none";
+  return "#19BE72";
 }
 
 function getSVGCoordinates(x, y, boardSize, strokeWidth) {
   var size = ((boardSize - (strokeWidth * 15/16)) / 15);
   var coordx = x * size + strokeWidth/2;
   var coordy = y * size + strokeWidth/2;
-  var d = "M " + coordy + " " + coordx + " h " + size + " v " + size + " h -" + size + " v -" + size + " Z";
+  var d = "M " + coordx + " " + coordy + " h " + size + " v " + size + " h -" + size + " v -" + size + " Z";
   return d;
 }
 
