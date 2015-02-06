@@ -8,13 +8,9 @@ function getRandomLetter() {
 }
 
 var Board = React.createClass({
-  getInitialState: function() {
-    return { letters: [], letterlist: [] }
-  },
   render: function() {
-    var i = 0;
     var letters = this.state.letters.map(function(letter) {
-      return <LetterTile letter={letter.letter} x={letter.coordx} y={letter.coordy} boardSize={this.props.size} />
+      return <LetterTile letter={letter.letter} x={letter.coordx} y={letter.coordy} boardSize={this.props.size} />;
     }.bind(this));
     var tiles = [];
     for(var i = 0 ; i < this.props.x ; i++) {

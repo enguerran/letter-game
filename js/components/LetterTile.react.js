@@ -1,5 +1,4 @@
 var React = require('react');
-var interact = require('interact.js');
 
 function getSVGCoordinates(x, y, boardSize, strokeWidth) {
   var size = ((boardSize - (strokeWidth * 15/16)) / 15);
