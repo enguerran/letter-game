@@ -1,4 +1,5 @@
 var React = require('react');
+var PlayActionCreators = require('../actions/PlayActionCreators');
 
 function getColor(x, y) {
   if(x % 4 === 1 && y % 4 === 1) {
@@ -109,6 +110,9 @@ function drawCenterStar(boardSize) {
 }
 
 var Tile = React.createClass({
+  getInitialState: function() {
+    return { unactive: false }
+  },
   render: function() {
     var strokeWidth = 5;
     var x = this.props.x, y = this.props.y;
@@ -137,17 +141,35 @@ var Tile = React.createClass({
     }
 
     if(this.props.letter !== undefined) {
-      color = "#D4C462";
-      tile = (
-        <g data-type="letter" data-coordx={x} data-coordy={y}>
-          <path fill={color} stroke="#000000" strokeWidth={strokeWidth} d={d} />
-          <text x={coordx + 60/2} y={coordy + 40} style={style.letter} textAnchor="middle" >{this.props.letter}</text>
-          <text x={coordx + 50} y={coordy + 50} style={style.point} textAnchor="middle">{getPoint(this.props.letter)}</text>
-        </g>
-      );
+      if(this.state.unactive) {
+        color = "#cccccc";
+        tile = (
+          <g data-type="letter" data-coordx={x} data-coordy={y}>
+            <path fill={color} stroke="#000000" strokeWidth={strokeWidth} d={d} />
+            <text x={coordx + 60/2} y={coordy + 40} style={style.letter} textAnchor="middle" >{this.props.letter}</text>
+            <text x={coordx + 50} y={coordy + 50} style={style.point} textAnchor="middle">{getPoint(this.props.letter)}</text>
+          </g>
+        );
+      }
+      else {
+        color = "#D4C462";
+        tile = (
+          <g onClick={this._handleClick} data-type="letter" data-coordx={x} data-coordy={y}>
+            <path fill={color} stroke="#000000" strokeWidth={strokeWidth} d={d} />
+            <text x={coordx + 60/2} y={coordy + 40} style={style.letter} textAnchor="middle" >{this.props.letter}</text>
+            <text x={coordx + 50} y={coordy + 50} style={style.point} textAnchor="middle">{getPoint(this.props.letter)}</text>
+          </g>
+        );
+      }
     }
 
     return tile;
+  },
+  _handleClick: function(e) {
+    if(this.props.playable && !this.state.unactive) {
+      PlayActionCreators.playLetter(this.props.letter);
+      this.setState({unactive: true});
+    }
   }
 });
 

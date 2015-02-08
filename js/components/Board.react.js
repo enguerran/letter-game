@@ -1,5 +1,6 @@
 var React = require('react');
 var Tile = require('./Tile.react');
+var SampleStore = require('../stores/SampleStore');
 
 function getRandomLetter() {
   return String.fromCharCode(65 + Math.floor(Math.random() * 26));
@@ -11,7 +12,10 @@ function getKey(x, y) {
 
 var Board = React.createClass({
   getInitialState: function() {
-    return { letters: []};
+    return { letters: [], activeLetter: '' };
+  },
+  componentDidMount: function() {
+    SampleStore.addChangeListener(this._onChange);
   },
   render: function() {
 
@@ -29,7 +33,7 @@ var Board = React.createClass({
     var d = "M 0 0 h " + width + " v " + height + " H 0 V 0 z";
     var viewBox = "0 0 " + width + " " + height;
     return (
-      <svg onClick={this._handleClick} version="1.1" viewBox={viewBox} className="svg-board" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" onClick={this._handleClick} viewBox={viewBox} className="svg-board" preserveAspectRatio="xMinYMin meet">
         <g>
           <path fill="#19BE72" d={d} />
         </g>
@@ -40,6 +44,9 @@ var Board = React.createClass({
     );
   },
   _handleClick: function(e) {
+    if(this.state.activeLetter === '') {
+      return;
+    }
     var target = e.target;
     while(!target.hasAttribute('data-type')) {
       if(target.nodeName.toLowerCase() === 'svg') {
@@ -56,9 +63,12 @@ var Board = React.createClass({
     var letters = this.state.letters;
     var key = getKey(x, y);
     if(letters.indexOf(key) === -1) {
-      letters[key] = { letter: getRandomLetter() };
-      this.setState({ letters : letters });
+      letters[key] = { letter: this.state.activeLetter };
+      this.setState({ letters : letters, activeLetter: '' });
     }
+  },
+  _onChange: function(e) {
+    this.setState({ activeLetter: SampleStore.getActiveLetter() });
   }
 });
 

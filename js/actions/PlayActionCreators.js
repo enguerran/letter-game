@@ -1,10 +1,11 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var Constants = require('../constants/Constants');
 
-var SampleActions = {
-  increment: function() {
+var PlayActionCreators = {
+  playLetter: function(letter) {
     AppDispatcher.handleViewAction({
-      actionType: Constants.SAMPLE_INCR
+      actionType: Constants.ACTIVE_LETTER,
+      letter: letter
     });
   },
   decrement: function() {
@@ -12,6 +13,6 @@ var SampleActions = {
       actionType: Constants.SAMPLE_DECR
     });
   }
-}
+};
 
-module.exports = SampleActions;
+module.exports = PlayActionCreators;

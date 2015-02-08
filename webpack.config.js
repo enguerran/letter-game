@@ -2,9 +2,6 @@ var webpack = require('webpack');
 
 module.exports = {
   port: 8080,
-  debug: true,
-  watch: true,
-  colors: true,
 
   devtool: 'eval-source-map',
   entry: [
