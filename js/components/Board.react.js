@@ -1,21 +1,28 @@
 var React = require('react');
 var Tile = require('./Tile.react');
-var CenterStar = require('./CenterStar.react');
-var LetterTile = require('./LetterTile.react');
 
 function getRandomLetter() {
   return String.fromCharCode(65 + Math.floor(Math.random() * 26));
 }
 
+function getKey(x, y) {
+  return x + "-" + y;
+}
+
 var Board = React.createClass({
+  getInitialState: function() {
+    return { letters: []};
+  },
   render: function() {
-    var letters = this.state.letters.map(function(letter) {
-      return <LetterTile letter={letter.letter} x={letter.coordx} y={letter.coordy} boardSize={this.props.size} />;
-    }.bind(this));
+
     var tiles = [];
-    for(var i = 0 ; i < this.props.x ; i++) {
-      for(var j = 0 ; j < this.props.y ; j++) {
-        tiles.push(<Tile key={i + "-" + j} x={i} y={j} boardSize={this.props.size} />);
+    var letter;
+    var key;
+    for(var i = 0 ; i < 15 ; i++) {
+      for(var j = 0 ; j < 15 ; j++) {
+        key = getKey(i,j);
+        letter = this.state.letters[key] ? this.state.letters[key].letter : undefined;
+        tiles.push(<Tile key={key} x={i} y={j} boardSize={this.props.size} letter={letter} />);
       }
     }
     var width = this.props.size, height = this.props.size;
@@ -24,30 +31,33 @@ var Board = React.createClass({
     return (
       <svg onClick={this._handleClick} version="1.1" viewBox={viewBox} className="svg-board" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
         <g>
-          <g>
-            <path fill="#19BE72" d={d} />
-            {tiles}
-            <CenterStar boardSize={this.props.size} />
-            {letters}
-          </g>
+          <path fill="#19BE72" d={d} />
+        </g>
+        <g>
+          {tiles}
         </g>
       </svg>
     );
   },
   _handleClick: function(e) {
-    if(e.target.getAttribute('data-type') === "letter") {
+    var target = e.target;
+    while(!target.hasAttribute('data-type')) {
+      if(target.nodeName.toLowerCase() === 'svg') {
+        return;
+      }
+      target = target.parentNode;
+    }
+
+    if(target.getAttribute('data-type') === "letter") {
       return;
     }
-    var x = e.target.getAttribute('data-coordx');
-    var y = e.target.getAttribute('data-coordy');
-    var reactid = e.target.getAttribute('data-reactid');
+    var x = target.getAttribute('data-coordx');
+    var y = target.getAttribute('data-coordy');
     var letters = this.state.letters;
-    var letterlist = this.state.letterlist;
-
-    if(letterlist.indexOf(reactid) === -1) {
-      letterlist.push(reactid);
-      letters.push({reactid: reactid, letter: getRandomLetter(), coordx: x, coordy: y});
-      this.setState({ letters: letters, letterlist: letterlist});
+    var key = getKey(x, y);
+    if(letters.indexOf(key) === -1) {
+      letters[key] = { letter: getRandomLetter() };
+      this.setState({ letters : letters });
     }
   }
 });
