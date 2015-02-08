@@ -1,14 +1,15 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/Constants');
+var assign = require('object-assign');
 
 var CHANGE_EVENT = 'change';
 
-var _counter = 0;
+var activeLetter;
 
-var SampleStore = Object.assign({}, EventEmitter.prototype, {
-  getSampleCounter: function() {
-    return _counter;
+var SampleStore = assign({}, EventEmitter.prototype, {
+  getActiveLetter: function() {
+    return activeLetter;
   },
   emitChange: function() {
     this.emit(CHANGE_EVENT);
@@ -25,8 +26,8 @@ AppDispatcher.register(function(payload) {
   var action = payload.action;
 
   switch(action.actionType) {
-    case Constants.SAMPLE_INCR:
-      _counter += 1;
+    case Constants.ACTIVE_LETTER:
+      activeLetter = action.letter;
       break;
     case Constants.SAMPLE_DECR:
       _counter -= 1;
@@ -34,6 +35,7 @@ AppDispatcher.register(function(payload) {
     default:
       return true;
   }
+  console.log("STORE", SampleStore.getActiveLetter());
   SampleStore.emitChange();
   return true;
 });

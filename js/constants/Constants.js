@@ -1,6 +1,6 @@
 var keyMirror = require('keymirror');
 
 module.exports = keyMirror({
-  SAMPLE_INCR: null,
+  ACTIVE_LETTER: null,
   SAMPLE_DECR: null
 });
