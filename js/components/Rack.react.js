@@ -1,5 +1,7 @@
-var React = require('react');
-var Tile = require('./Tile.react');
+"use strict";
+
+var React = require("react");
+var Tile = require("./Tile.react");
 
 var Rack = React.createClass({
 

@@ -1,9 +1,11 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var Constants = require('../constants/Constants');
-var assign = require('object-assign');
+"use strict";
 
-var CHANGE_EVENT = 'change';
+var AppDispatcher = require("../dispatcher/AppDispatcher");
+var EventEmitter = require("events").EventEmitter;
+var Constants = require("../constants/Constants");
+var assign = require("object-assign");
+
+var CHANGE_EVENT = "change";
 
 var activeLetter;
 
@@ -28,9 +30,6 @@ AppDispatcher.register(function(payload) {
   switch(action.actionType) {
     case Constants.ACTIVE_LETTER:
       activeLetter = action.letter;
-      break;
-    case Constants.SAMPLE_DECR:
-      _counter -= 1;
       break;
     default:
       return true;

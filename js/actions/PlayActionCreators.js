@@ -1,5 +1,7 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher');
-var Constants = require('../constants/Constants');
+"use strict";
+
+var AppDispatcher = require("../dispatcher/AppDispatcher");
+var Constants = require("../constants/Constants");
 
 var PlayActionCreators = {
   playLetter: function(letter) {

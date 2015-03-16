@@ -1,23 +1,24 @@
-var webpack = require('webpack');
+var webpack = require("webpack");
+var path = require("path");
 
 module.exports = {
   port: 8080,
 
-  devtool: 'eval-source-map',
+  devtool: "inline-source-map",
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/dev-server',
-    './js/app'
+    "webpack-dev-server/client?http://localhost:8080",
+    "webpack/hot/dev-server",
+    "./js/app"
   ],
   output: {
-    path: __dirname + '/js',
-    filename: 'bundle.js',
-    publicPath: '/js/'
+    path: path.join(__dirname, "/js"),
+    filename: "bundle.js",
+    publicPath: "/js/"
   },
   module: {
     loaders: [
       { test: /\.css$/, loader: "style!css", exclude: /node_modules/ },
-      { test: /\.js$/, loaders: ["react-hot", "jsx"], exclude: /node_modules/ }
+      { test: /\.js$/, loaders: ["react-hot", "babel-loader"], exclude: /node_modules/ }
     ]
   },
   plugins: [
@@ -25,6 +26,6 @@ module.exports = {
     new webpack.NoErrorsPlugin()
   ],
   resolve: {
-    extensions: ['', '.js']
+    extensions: ["", ".js"]
   }
 };

@@ -1,43 +1,22 @@
-var React = require('react');
-var PlayActionCreators = require('../actions/PlayActionCreators');
+"use strict";
+
+var React = require("react");
+var PlayActionCreators = require("../actions/PlayActionCreators");
+import { getBonus } from "../utils/Game";
 
 function getColor(x, y) {
-  if(x % 4 === 1 && y % 4 === 1) {
-    if((x-1)%12 !== 0 || (y-1)%12 !== 0) {
-      return "#0000FF";
-    }
+  var bonus = getBonus(x, y);
+  if(bonus === "TLS") {
+    return "#0000FF";
   }
-  if(x%7 === 0 && y%7 === 0 && (x !== 7 || y !== 7)) {
-      return "#FF0000";
+  if(bonus === "TWS") {
+    return "#FF0000";
   }
-  if(x < 5 || x > 9 || x === 7) {
-    if(x === y || x === 14 - y) {
-      return "#FF80E5";
-    }
+  if(bonus === "DWS") {
+    return "#FF80E5";
   }
-  if(x%14 !== 0) {
-    if(!(x === 10 || x === 4) && x%2 === 0) {
-      if(y === 14/2 + 1 || y === 14/2 - 1) {
-        return "#00C0FF";
-      }
-    }
-  }
-  if(x%8 === 3) {
-    if(y%7 === 0) {
-      return "#00C0FF";
-    }
-  }
-  if(y%14 !== 0) {
-    if(!(y === 10 || y === 4) && y%2 === 0) {
-      if(x === 14/2 + 1 || x === 14/2 - 1) {
-        return "#00C0FF";
-      }
-    }
-  }
-  if(y%8 === 3) {
-    if(x%7 === 0) {
-      return "#00C0FF";
-    }
+  if(bonus === "DLS") {
+    return "#00C0FF";
   }
   return "#19BE72";
 }
@@ -66,26 +45,26 @@ var style = {
 
 function getPoint(letter) {
   switch(letter) {
-    case 'K':
-    case 'W':
-    case 'X':
-    case 'Y':
-    case 'Z':
+    case "K":
+    case "W":
+    case "X":
+    case "Y":
+    case "Z":
       return 10;
-    case 'J':
-    case 'Q':
+    case "J":
+    case "Q":
       return 8;
-    case 'F':
-    case 'H':
-    case 'V':
+    case "F":
+    case "H":
+    case "V":
       return 4;
-    case 'B':
-    case 'C':
-    case 'P':
+    case "B":
+    case "C":
+    case "P":
       return 3;
-    case 'D':
-    case 'G':
-    case 'M':
+    case "D":
+    case "G":
+    case "M":
       return 2;
     default:
       return 1;
@@ -111,7 +90,7 @@ function drawCenterStar(boardSize) {
 
 var Tile = React.createClass({
   getInitialState: function() {
-    return { unactive: false }
+    return { unactive: false };
   },
   render: function() {
     var strokeWidth = 5;
@@ -121,19 +100,21 @@ var Tile = React.createClass({
     var coordy = y * size + strokeWidth/2;
 
     var d = getSVGCoordinates(coordx, coordy, size);
-    var color = getColor(x,y);
+    var color = getColor(x, y);
+
+    var path = <path fill={color} stroke="#000000" strokeWidth={strokeWidth} d={d} />;
 
     var tile = (
-      <g data-type="tile" data-coordx={x} data-coordy={y}>
-        <path fill={color} stroke="#000000" strokeWidth={strokeWidth} d={d} />
+      <g title={x+"-"+y} data-type="tile" data-coordx={x} data-coordy={y}>
+        {path}
       </g>
     );
 
-    if(isCenterTile(x,y)) {
+    if(isCenterTile(x, y)) {
       var polygon = drawCenterStar(this.props.boardSize);
       tile = (
-        <g data-type="tile" data-coordx={x} data-coordy={y}>
-          <path fill={color} stroke="#000000" strokeWidth={strokeWidth} d={d} />
+        <g title={x+"-"+y} data-type="tile" data-coordx={x} data-coordy={y}>
+          {path}
           <polygon points={polygon[0].points}/>
           <polygon points={polygon[1].points}/>
         </g>
@@ -165,7 +146,7 @@ var Tile = React.createClass({
 
     return tile;
   },
-  _handleClick: function(e) {
+  _handleClick: function(event) {
     if(this.props.playable && !this.state.unactive) {
       PlayActionCreators.playLetter(this.props.letter);
       this.setState({unactive: true});
